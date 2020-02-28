@@ -1,0 +1,69 @@
+---
+openapi: 3.0.1
+info:
+  title: API V1
+  version: v1
+paths:
+  "/api/v1/products":
+    post:
+      summary: Creates a product
+      tags:
+      - Products
+      consumes:
+      - application/json
+      - application/xml
+      parameters:
+      - title: product
+        in: body
+        schema:
+          type: object
+          properties:
+            title:
+              type: string
+            price:
+              type: integer
+            published:
+              type: boolean
+          required:
+          - title
+          - price
+          - published
+      responses:
+        '201':
+          description: product created
+        '422':
+          description: invalid request
+  "/api/v1/products/{id}":
+    get:
+      summary: Retrieves a product
+      tags:
+      - Products
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - title: id
+        in: path
+        type: string
+        required: true
+      responses:
+        '200':
+          description: title found
+          schema:
+            type: object
+            properties:
+              id:
+                type: integer
+              title:
+                type: string
+              price:
+                type: integer
+              published:
+                type: boolean
+            required:
+            - id
+            - title
+            - price
+            - published
+        '404':
+          description: product not found

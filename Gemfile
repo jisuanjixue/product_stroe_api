@@ -27,6 +27,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 # gem 'rack-cors'
 
 group :development, :test do
+  gem 'rspec-rails', '~> 3.5'
   gem 'sqlite3', '~> 1.4'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
@@ -57,3 +58,5 @@ gem 'kaminari', '~> 1.2'
 gem 'bullet', '~> 6.1', group: :development
 
 gem 'rack-cors', '~> 1.1'
+
+gem 'rswag'
