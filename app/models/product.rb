@@ -2,6 +2,9 @@
 
 class Product < ApplicationRecord
   belongs_to :user
+
+  mount_uploader :product_logo, ProductLogoUploader
+
   has_many :placements, dependent: :destroy
   has_many :orders, through: :placements
   validates  :user_id, :title, presence: true

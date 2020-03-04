@@ -12,7 +12,7 @@ User.delete_all
 Product.delete_all
 
 5.times do
-  user = User.create! email: Faker::Internet.email, password: 'locadex1234'
+  user = User.create! email: Faker::Internet.email, password: 'locadex1234', avatar: Faker::Avatar.image(slug: "my-avatar", size: "50x50")
   puts "创建新用户: #{user.email}"
 
   2.times do
@@ -20,6 +20,7 @@ Product.delete_all
       title: Faker::Commerce.product_name,
       price: rand(1.0..100.0),
       published: true,
+      product_logo: Faker::Avatar.image,
       user_id: user.id
     )
     puts "创建新产品: #{product.title}"
