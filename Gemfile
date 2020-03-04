@@ -54,14 +54,22 @@ gem 'jwt', '~> 2.2'
 
 gem 'faker', '~> 2.10'
 
+# json api
 gem 'fast_jsonapi', '~> 1.5'
 
+# 分页
 gem 'kaminari', '~> 1.2'
 
 gem 'bullet', '~> 6.1', group: :development
 
+# 跨域
 gem 'rack-cors', '~> 1.1'
 
+# rspec 测试文档生成
 gem 'rswag'
 
 gem 'rack-attack'
+
+# 图片上传
+gem 'carrierwave'
+gem 'mini_magick'
