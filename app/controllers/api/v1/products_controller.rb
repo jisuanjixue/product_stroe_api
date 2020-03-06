@@ -1,6 +1,5 @@
 class Api::V1::ProductsController < ApplicationController
   include Paginable
-  
   load_and_authorize_resource
 
   before_action :set_product, only: %i[show update destroy]

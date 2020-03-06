@@ -80,3 +80,8 @@ gem "rolify"
 
 # 测试用户权限
 gem 'graphiti'
+# 实现按某年，某月，某日，或者星期几，来查询数据
+gem 'by_star', git: "git://github.com/radar/by_star"
+
+# 控制代码质量
+gem "rails_best_practices"
