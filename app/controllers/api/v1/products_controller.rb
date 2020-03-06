@@ -1,5 +1,8 @@
 class Api::V1::ProductsController < ApplicationController
   include Paginable
+  
+  load_and_authorize_resource
+
   before_action :set_product, only: %i[show update destroy]
   before_action :check_login, only: %i[create]
   before_action :check_owner, only: %i[update destroy]
@@ -47,7 +50,7 @@ class Api::V1::ProductsController < ApplicationController
   end
 
   def product_params
-     params.require(:product).permit(:title, :price, :published)
+     params.require(:product).permit(:title, :price, :published, :product_logo)
   end
 
   def check_owner

@@ -73,3 +73,10 @@ gem 'rack-attack'
 # 图片上传
 gem 'carrierwave'
 gem 'mini_magick'
+
+# 用户权限
+gem 'cancancan'
+gem "rolify"
+
+# 测试用户权限
+gem 'graphiti'

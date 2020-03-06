@@ -11,9 +11,19 @@
 User.delete_all
 Product.delete_all
 
+Role.create(name: 'admin')
+Role.create(name: 'normal_user')
+
+admin_user = User.create! email: Faker::Internet.email, password: 'admin1234', avatar: Faker::Avatar.image(slug: "admin-avatar", size: "50x50")
+puts "创建admin新用户: #{admin_user.email}"
+
+admin_user.add_role(:admin)
+
 5.times do
   user = User.create! email: Faker::Internet.email, password: 'locadex1234', avatar: Faker::Avatar.image(slug: "my-avatar", size: "50x50")
   puts "创建新用户: #{user.email}"
+
+  user.add_role(:normal_user)
 
   2.times do
     product = Product.create!(
